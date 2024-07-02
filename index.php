@@ -1,4 +1,17 @@
 <?php
+/* Teste para verificar o funcionamento do envio
+
+    if (isset($_POST['submit'])) {
+        print_r($_POST['Nome']);
+        print_r("<br>");
+        print_r($_POST['Sobrenome']);
+        print_r("<br>");
+        print_r($_POST['Email']);
+        print_r("<br>");
+        print_r($_POST['Password']);
+    }
+
+*/
 
 ?>
 
@@ -10,13 +23,13 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="index.php" method="post">
+    <form action="index.php" method="POST">
         <legend><b>Cadastro de dados</b></legend>
         <br>
-        <input type="text" name="PrimeiroNome" required>
+        <input type="text" name="Nome" required>
         <label for="">Primeiro Nome</label>
         <br>
-        <input type="text" name="SegundoNome" required>
+        <input type="text" name="Sobrenome" required>
         <label for="">Segundo nome</label>
         <br>
         <input type="email" name="Email" required>
@@ -25,7 +38,7 @@
         <input type="password" name="Password" required>
         <label for="">Senha</label>
         <br>
-        <input type="submit" name="Submit">
+        <input type="submit" name="submit" id="submit">
     </form>
 </body>
 </html>
