@@ -12,7 +12,15 @@
     }
 
 */
+include_once("conexao.php");
 
+$nome = $_POST['Nome'];
+$sobrenome = $_POST['Sobrenome'];
+$email = $_POST['Email'];
+$senha = $_POST['Senha'];
+
+$result = mysqli_query($conexao, "INSERT INTO login_page(nome, sobrenome, email, senha)
+VALUES ('$nome', '$sobrenome', '$email', '$senha')");
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +43,7 @@
         <input type="email" name="Email" required>
         <label for="">Email</label>
         <br>
-        <input type="password" name="Password" required>
+        <input type="password" name="Senha" required>
         <label for="">Senha</label>
         <br>
         <input type="submit" name="submit" id="submit">
