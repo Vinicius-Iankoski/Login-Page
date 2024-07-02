@@ -20,7 +20,7 @@ $email = $_POST['Email'];
 $senha = $_POST['Senha'];
 $hash = password_hash($senha, PASSWORD_DEFAULT);
 
-$result = mysqli_query($conexao, "INSERT INTO login_page(nome, sobrenome, email, senha)
+$mysqli = mysqli_query($conexao, "INSERT INTO login_page(nome, sobrenome, email, senha)
 VALUES ('$nome', '$sobrenome', '$email', '$hash')");
 ?>
 
