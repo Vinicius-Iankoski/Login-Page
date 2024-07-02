@@ -18,9 +18,10 @@ $nome = $_POST['Nome'];
 $sobrenome = $_POST['Sobrenome'];
 $email = $_POST['Email'];
 $senha = $_POST['Senha'];
+$hash = password_hash($senha, PASSWORD_DEFAULT);
 
 $result = mysqli_query($conexao, "INSERT INTO login_page(nome, sobrenome, email, senha)
-VALUES ('$nome', '$sobrenome', '$email', '$senha')");
+VALUES ('$nome', '$sobrenome', '$email', '$hash')");
 ?>
 
 <!DOCTYPE html>
@@ -34,16 +35,16 @@ VALUES ('$nome', '$sobrenome', '$email', '$senha')");
     <form action="index.php" method="POST">
         <legend><b>Cadastro de dados</b></legend>
         <br>
-        <input type="text" name="Nome" required>
+        <input type="text" name="Nome" minlength="2" pattern="[A-Za-zÀ-ú\s]+" required>
         <label for="">Primeiro Nome</label>
         <br>
         <input type="text" name="Sobrenome" required>
         <label for="">Segundo nome</label>
         <br>
-        <input type="email" name="Email" required>
+        <input type="email" name="Email" maxlength="45" required>
         <label for="">Email</label>
         <br>
-        <input type="password" name="Senha" required>
+        <input type="password" name="Senha" minlength="6" maxlength="45" required>
         <label for="">Senha</label>
         <br>
         <input type="submit" name="submit" id="submit">
